@@ -15,8 +15,10 @@ export class GameOver extends Container {
 
         this.background = new Graphics();
         this.background.rect(0, 0, GameConfig.width, GameConfig.height);
-        this.background.fill({ color: 0x000000, alpha: 0.7 });
+        this.background.fill({ color: 0x000000, alpha: 0.8 });
         this.addChild(this.background);
+        // Cache static background for performance
+        this.background.cacheAsBitmap = true;
 
         const style = new TextStyle({
             fontFamily: 'Arial',
